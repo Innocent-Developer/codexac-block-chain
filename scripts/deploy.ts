@@ -4,8 +4,8 @@ import path from "path";
 
 async function main() {
   // Get deployment parameters
-  const name = process.env.TOKEN_NAME || "My Token";
-  const symbol = process.env.TOKEN_SYMBOL || "MTK";
+  const name = process.env.TOKEN_NAME || "codexac";
+  const symbol = process.env.TOKEN_SYMBOL || "cxac";
   const initialSupply = process.env.INITIAL_SUPPLY || "1000000";
 
   console.log("Deploying token with parameters:");
@@ -54,6 +54,16 @@ async function main() {
   );
 
   console.log("Deployment info saved to:", `deployments/${network.name}.json`);
+
+  // Add this after token deployment
+  console.log("\nToken Configuration for MetaMask:");
+  console.table({
+    "Token Contract Address": tokenAddress,
+    "Token Symbol": symbol,
+    "Decimals": "18",
+    "Network": network.name,
+    "Chain ID": network.chainId.toString(),
+  });
 }
 
 main()
