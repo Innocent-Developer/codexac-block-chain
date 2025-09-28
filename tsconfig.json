@@ -9,6 +9,6 @@
     "resolveJsonModule": true,
     "outDir": "dist"
   },
-  "include": ["./scripts", "./test"],
+  "include": ["./scripts", "./test", "src/deterministicdeployment.ts"],
   "files": ["./hardhat.config.ts"]
 }
